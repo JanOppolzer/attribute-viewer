@@ -153,32 +153,16 @@ if($logged &&
             <ul>
 <?php
 
-if(!isset($attributes["eppn"]))
-    echo "<li>Atribut <a class=\"attr-required\" href=\"" .$GLOBALS["attribute"]["eppn"]["url-eduidcz"]. "\">eduPersonPrincipalName</a> není dostupný</li>\n";
-
-if(!isset($attributes["affiliation"]))
-    echo "<li>Atribut <a class=\"attr-required\" href=\"" .$GLOBALS["attribute"]["affiliation"]["url-eduidcz"]. "\">eduPersonScopedAffiliation</a> není dostupný</li>\n";
-
-if(!isset($attributes["persistent-id"]))
-    echo "<li>Atribut <a class=\"attr-required\" href=\"" .$GLOBALS["attribute"]["persistent-id"]["url-eduidcz"]. "\">eduPersonTargetedID</a> není dostupný</li>\n";
-
-if(!isset($attributes["uniqueId"]))
-    echo "<li>Atribut <a class=\"attr-required\" href=\"" .$GLOBALS["attribute"]["uniqueId"]["url-eduidcz"]. "\">eduPersonUniqueId</a> není dostupný</li>\n";
-
-if(!isset($attributes["givenName"]))
-    echo "<li>Atribut <a class=\"attr-required\" href=\"" .$GLOBALS["attribute"]["givenName"]["url-eduidcz"]. "\">givenName</a> není dostupný</li>\n";
-
-if(!isset($attributes["sn"]))
-    echo "<li>Atribut <a class=\"attr-required\" href=\"" .$GLOBALS["attribute"]["sn"]["url-eduidcz"]. "\">sn</a> není dostupný</li>\n";
-    
-if(!isset($attributes["cn"]))
-    echo "<li>Atribut <a class=\"attr-required\" href=\"" .$GLOBALS["attribute"]["cn"]["url-eduidcz"]. "\">cn</a> není dostupný</li>\n";
-
-if(!isset($attributes["mail"]))
-    echo "<li>Atribut <a class=\"attr-required\" href=\"" .$GLOBALS["attribute"]["mail"]["url-eduidcz"]. "\">mail</a> není dostupný</li>\n";
-
-if(!isset($attributes["unstructuredName"]))
-    echo "<li>Atribut <a class=\"attr-required\" href=\"" .$GLOBALS["attribute"]["unstructuredName"]["url-eduidcz"]. "\">unstructuredName</a> není dostupný</li>\n";
+     $class = "attr-required";
+     missingAttribute($attributes["eppn"], "eppn", $class);
+     missingAttribute($attributes["affiliation"], "affiliation", $class);
+     missingAttribute($attributes["persistent-id"], "persistent-id", $class);
+     missingAttribute($attributes["uniqueId"], "uniqueId", $class);
+     missingAttribute($attributes["givenName"], "givenName", $class);
+     missingAttribute($attributes["sn"], "sn", $class);
+     missingAttribute($attributes["cn"], "cn", $class);
+     missingAttribute($attributes["mail"], "mail", $class);
+     missingAttribute($attributes["unstructuredName"], "unstructuredName", $class);
 
 ?>
             </ul>
@@ -205,17 +189,11 @@ if($logged &&
             <ul>
 <?php
 
-if (! isset ($attributes["displayName"]))
-    echo "<li>Atribut <a class=\"attr-recommended\" href=\"" .$GLOBALS["attribute"]["displayName"]["url-eduidcz"]. "\">displayName</a> není dostupný</li>\n";
-
-if (! isset ($attributes["o"]))
-    echo "<li>Atribut <a class=\"attr-recommended\" href=\"" .$GLOBALS["attribute"]["o"]["url-eduidcz"]. "\">o</a> není dostupný</li>\n";
-
-if (! isset ($attributes["ou"]))
-    echo "<li>Atribut <a class=\"attr-recommended\" href=\"" .$GLOBALS["attribute"]["ou"]["url-eduidcz"]. "\">ou</a> není dostupný</li>\n";
-
-if (! isset ($attributes["entitlement"]))
-    echo "<li>Atribut <a class=\"attr-recommended\" href=\"" .$GLOBALS["attribute"]["entitlement"]["url-eduidcz"]. "\">entitlement</a> není dostupný</li>\n";
+     $class = "attr-recommended";
+     missingAttribute($attributes["displayName"], "displayName", $class);
+     missingAttribute($attributes["o"], "o", $class);
+     missingAttribute($attributes["ou"], "ou", $class);
+     missingAttribute($attributes["entitlement"], "entitlement", $class);
 
 ?>
             </ul>
@@ -243,11 +221,9 @@ if($logged) {
 
 <?php
 
-if (! isset ($attributes["authMail"]))
-    echo "<li>Atribut <a class=\"attr-required\" href=\"" .$GLOBALS["attribute"]["authMail"]["url-eduidcz"]. "\">authMail</a> není dostupný</li>\n";
-
-if (! isset ($attributes["commonNameASCII"]))
-    echo "<li>Atribut <a class=\"attr-required\" href=\"" .$GLOBALS["attribute"]["commonNameASCII"]["url-eduidcz"]. "\">commonNameASCII</a> není dostupný</li>\n";
+     $class = "attr-required";
+     missingAttribute($attributes["authMail"], "authMail", $class);
+     missingAttribute($attributes["commonNameASCII"], "commonNameASCII", $class);
 
 ?>
 
@@ -258,7 +234,7 @@ if (! isset ($attributes["commonNameASCII"]))
         <hr class="hidden">
 <?php
 
-    }    if(!isset ($attributes["telephoneNumber"]) ) {
+    }    if(!isset($attributes["telephoneNumber"]) ) {
 ?>
 
         <div class="warning">
@@ -268,8 +244,8 @@ if (! isset ($attributes["commonNameASCII"]))
 
 <?php
 
-if(!isset($attributes["telephoneNumber"]))
-    echo "<li>Atribut <a class=\"attr-recommended\" href=\"" .$GLOBALS["attribute"]["telephoneNumber"]["url-eduidcz"]. "\">telephoneNumber</a> není dostupný</li>\n";
+     $class = "attr-recommended";
+     missingAttribute($attributes["telephoneNumber"], "telephoneNumber", $class);
 
 ?>
 
@@ -315,26 +291,14 @@ if($logged) {
 
 <?php
 
-if(!isset($attributes["displayName"]))
-    echo "<li>Atribut <a class=\"attr-required\" href=\"" .$GLOBALS["attribute"]["displayName"]["url-eduidcz"]. "\">displayName</a> není dostupný</li>\n";
-
-if(!isset($attributes["eppn"]))
-    echo "<li>Atribut <a class=\"attr-required\" href=\"" .$GLOBALS["attribute"]["eppn"]["url-eduidcz"]. "\">eduPersonPrincipalName</a> není dostupný</li>\n";
-
-if(!isset($attributes["affiliation"]))
-    echo "<li>Atribut <a class=\"attr-required\" href=\"" .$GLOBALS["attribute"]["affiliation"]["url-eduidcz"]. "\">eduPersonScopedAffiliation</a> není dostupný</li>\n";
-
-if(!isset($attributes["persistent-id"]))
-    echo "<li>Atribut <a class=\"attr-required\" href=\"" .$GLOBALS["attribute"]["persistent-id"]["url-eduidcz"]. "\">eduPersonTargetedID</a> není dostupný</li>\n";
-
-if(!isset($attributes["givenName"]))
-    echo "<li>Atribut <a class=\"attr-required\" href=\"" .$GLOBALS["attribute"]["givenName"]["url-eduidcz"]. "\">givenName</a> není dostupný</li>\n";
-
-if(!isset($attributes["mail"]))
-    echo "<li>Atribut <a class=\"attr-required\" href=\"" .$GLOBALS["attribute"]["mail"]["url-eduidcz"]. "\">mail</a> není dostupný</li>\n";
-
-if(!isset($attributes["sn"]))
-    echo "<li>Atribut <a class=\"attr-required\" href=\"" .$GLOBALS["attribute"]["sn"]["url-eduidcz"]. "\">sn</a> není dostupný</li>\n";
+     $class = "attr-required";
+     missingAttribute($attributes["displayName"], "displayName", $class);
+     missingAttribute($attributes["eppn"], "eppn", $class);
+     missingAttribute($attributes["affiliation"], "affiliation", $class);
+     missingAttribute($attributes["persistent-id"], "persistent-id", $class);
+     missingAttribute($attributes["givenName"], "givenName", $class);
+     missingAttribute($attributes["mail"], "mail", $class);
+     missingAttribute($attributes["sn"], "sn", $class);
 
 ?>
 

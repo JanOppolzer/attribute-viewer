@@ -294,5 +294,13 @@ function isSIRTFI() {
     }
 }
 
+/* print missing attribute
+ */
+function missingAttribute($attribute, $name, $class) {
+    if(!isset($attribute)) {
+        echo "<li>Atribut <a class=\"$class\" href=\"" .$GLOBALS["attribute"]["$name"]["url-eduidcz"]. "\">" . $GLOBALS["attribute"]["$name"]["name"] . "</a> není dostupný</li>\n";
+    }
+}
+
 ?>
 
