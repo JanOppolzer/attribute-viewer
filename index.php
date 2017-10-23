@@ -339,6 +339,7 @@ if(!isset($attributes["sn"]))
 ?>
 
             </ul>
+        </div>
 
 <?php
     }
